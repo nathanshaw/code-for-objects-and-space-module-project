@@ -3,12 +3,11 @@
 // Nathan Villicana-Shaw in the fall of 2017
 // for the Objects and Space class at the
 // California College of the Arts
-// In-class workshop #1 part 3 of 3
 /////////////////////////////////////////////////
 
-const int debounce_time = 50;
+const int DEBUG = false;
 // global variables which persist throughout the entire program run-time
-const int button_pins[] = {2,3};
+int button_pins[] = {2,3};
 // boolean can be true or false
 // this is a good choice of type to represent our button state
 // as our button can be either on or off
@@ -18,7 +17,7 @@ boolean last_button_states[] = {false, false};
 // we need to keep track of when our buttons were last pressed
 // as we will be keeping track of the number of milliseconds which passed
 // we are going to use a data type which stores a higher value than a simple int
-long last_button_presses[] = {0,0};
+long last_button_presses[] = {0,0}
 
 // the setup function is run once when the Arduino boots
 void setup() {
@@ -31,6 +30,7 @@ void setup() {
    for (int i = 0; i < sizeof(button_pins)/sizeof(int); i++){
      pinMode(button_pins[i], INPUT); 
    }
+   dprintln("exited setup loop");
 }
 
 // the loop function will run infinetally after the setup loop (above) has exited
